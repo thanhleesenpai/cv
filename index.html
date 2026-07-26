@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lê Minh Thành — Backend Developer</title>
 <meta name="description" content="CV online của Lê Minh Thành, Backend Developer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232255aa'/%3E%3Ctext x='32' y='42' font-family='Arial,Helvetica,sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3ELMT%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lê Minh Thành — Backend Developer">
+<meta property="og:description" content="CV online của Lê Minh Thành, Backend Developer. Kinh nghiệm Java/Spring Boot, Node.js, PHP, microservices.">
+<meta property="og:url" content="https://cv-ten-cyan-52.vercel.app/">
+<meta property="og:image" content="https://cv-ten-cyan-52.vercel.app/photo.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lê Minh Thành — Backend Developer">
+<meta name="twitter:description" content="CV online của Lê Minh Thành, Backend Developer.">
+<meta name="twitter:image" content="https://cv-ten-cyan-52.vercel.app/photo.jpg">
 <style>
   :root{
     --bg:#ffffff;
@@ -121,8 +132,22 @@
     .skills-grid{ grid-template-columns:1fr; }
   }
 
+  @page{
+    size: A4;
+    margin: 14mm 12mm;
+  }
   @media print{
+    :root{
+      --bg:#ffffff; --text:#222222; --text-dim:#5a5a5a;
+      --border:#d9d9d9; --heading:#111111; --link:#2255aa;
+    }
     .topbar{ display:none; }
+    body{ font-size:11.5px; }
+    .wrap{ max-width:none; padding:0; }
+    a{ color:var(--text); text-decoration:none; }
+    .entry-row, .header{ break-inside: avoid; page-break-inside: avoid; }
+    p, li{ orphans:3; widows:3; }
+    footer{ display:none; }
   }
 </style>
 </head>
