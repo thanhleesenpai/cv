@@ -53,6 +53,14 @@
   document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setLang(btn.dataset.lang)));
   document.getElementById('download-btn').addEventListener('click', () => window.print());
 
+  const pageTitle = document.title;
+  window.addEventListener('beforeprint', () => {
+    document.title = lang === 'vi' ? 'Le-Minh-Thanh-CV-VI' : 'Le-Minh-Thanh-CV-EN';
+  });
+  window.addEventListener('afterprint', () => {
+    document.title = pageTitle;
+  });
+
   const themeBtn = document.getElementById('theme-toggle');
   function setTheme(theme){
     document.documentElement.setAttribute('data-theme', theme);
