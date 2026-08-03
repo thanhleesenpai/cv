@@ -1,17 +1,37 @@
 {
-  "meta": { "updated": "07/2026" },
+  "meta": {
+    "updated": "07/2026"
+  },
   "person": {
     "name": "Lê Minh Thành",
     "role": "Backend Developer",
     "photo": "photo.jpg",
     "email": "thanhle20072004@gmail.com",
-    "github": { "label": "github.com/thanhleesenpai", "url": "https://github.com/thanhleesenpai" },
-    "linkedin": { "label": "linkedin.com/in/thanhminhle", "url": "https://linkedin.com/in/thanhminhle" },
+    "github": {
+      "label": "github.com/thanhleesenpai",
+      "url": "https://github.com/thanhleesenpai"
+    },
+    "linkedin": {
+      "label": "linkedin.com/in/thanhminhle",
+      "url": "https://linkedin.com/in/thanhminhle"
+    },
     "infoLines": [
-      { "vi": "Ngày sinh: 20/07/2004", "en": "Dob: 20/07/2004" },
-      { "vi": "Giới tính: Nam", "en": "Gender: Male" },
-      { "vi": "Số điện thoại: 0969204873", "en": "Phone: 0969204873" },
-      { "vi": "Địa chỉ: Hà Nội", "en": "Address: Hanoi, Vietnam" }
+      {
+        "vi": "Ngày sinh: 20/07/2004",
+        "en": "Dob: 20/07/2004"
+      },
+      {
+        "vi": "Giới tính: Nam",
+        "en": "Gender: Male"
+      },
+      {
+        "vi": "Số điện thoại: 0969204873",
+        "en": "Phone: 0969204873"
+      },
+      {
+        "vi": "Địa chỉ: Hà Nội",
+        "en": "Address: Hanoi, Vietnam"
+      }
     ]
   },
   "about": {
@@ -21,29 +41,65 @@
   "education": [
     {
       "date": "2022 – 2026",
-      "title": { "vi": "Trường: Đại học Bách Khoa Hà Nội", "en": "Hanoi University of Science and Technology" },
-      "subtitle": { "vi": "Chuyên ngành: Công nghệ Thông tin Việt Nhật (ITe6)", "en": "Vietnam–Japan Information Technology Program (ITe6)" },
-      "note": { "vi": "Đã hoàn thành chương trình học | GPA: 3.1/4.0", "en": "Coursework completed | GPA: 3.1/4.0" }
+      "title": {
+        "vi": "Trường: Đại học Bách Khoa Hà Nội",
+        "en": "Hanoi University of Science and Technology"
+      },
+      "subtitle": {
+        "vi": "Chuyên ngành: Công nghệ Thông tin Việt Nhật (ITe6)",
+        "en": "Vietnam–Japan Information Technology Program (ITe6)"
+      },
+      "note": {
+        "vi": "Đã hoàn thành chương trình học | GPA: 3.1/4.0",
+        "en": "Coursework completed | GPA: 3.1/4.0"
+      }
     }
   ],
   "experience": [
     {
       "date": "13/09/2025 – 08/01/2026",
-      "company": { "vi": "Công ty TNHH Công nghệ Pip Việt Nam", "en": "Pip Vietnam Technology Co., Ltd" },
-      "role": { "vi": "Thực tập sinh Backend PHP", "en": "Backend Developer Intern (PHP)" },
+      "company": {
+        "vi": "Công ty TNHH Công nghệ Pip Việt Nam",
+        "en": "Pip Vietnam Technology Co., Ltd"
+      },
+      "role": {
+        "vi": "Thực tập sinh Backend PHP",
+        "en": "Backend Developer Intern (PHP)"
+      },
       "bullets": [
-        { "vi": "Xây dựng và chỉnh sửa API phục vụ Website và hệ thống CMS nội bộ (quản lý sản phẩm, tài liệu, danh mục, v.v.).", "en": "Built and modified APIs for the company website and internal CMS (product, document, and category management, etc.)." },
-        { "vi": "Xử lý sitemap và robots.txt; truy cập và thao tác trực tiếp trên VPS qua SSH (deploy, cấu hình); khắc phục lỗi upload, editor và dữ liệu liên quan đến Apache/PHP và quyền thư mục.", "en": "Handled sitemap and robots.txt for SEO; accessed and worked directly on a VPS via SSH (deployment, configuration); fixed upload, editor, and data issues related to Apache/PHP and folder permissions." },
-        { "vi": "Đảm bảo các API hoạt động ổn định, đáp ứng đúng yêu cầu nghiệp vụ do team giao theo từng đợt (ticket-based).", "en": "Kept APIs stable and met business requirements assigned by the team on a ticket basis." }
+        {
+          "vi": "Xây dựng và chỉnh sửa API phục vụ Website và hệ thống CMS nội bộ (quản lý sản phẩm, tài liệu, danh mục, v.v.).",
+          "en": "Built and modified APIs for the company website and internal CMS (product, document, and category management, etc.)."
+        },
+        {
+          "vi": "Xử lý sitemap và robots.txt; truy cập và thao tác trực tiếp trên VPS qua SSH (deploy, cấu hình); khắc phục lỗi upload, editor và dữ liệu liên quan đến Apache/PHP và quyền thư mục.",
+          "en": "Handled sitemap and robots.txt for SEO; accessed and worked directly on a VPS via SSH (deployment, configuration); fixed upload, editor, and data issues related to Apache/PHP and folder permissions."
+        },
+        {
+          "vi": "Đảm bảo các API hoạt động ổn định, đáp ứng đúng yêu cầu nghiệp vụ do team giao theo từng đợt (ticket-based).",
+          "en": "Kept APIs stable and met business requirements assigned by the team on a ticket basis."
+        }
       ]
     },
     {
       "date": "28/07/2025 – 28/08/2025",
-      "company": { "vi": "Công ty Cổ phần Công nghệ Proton", "en": "Proton Technology JSC" },
-      "role": { "vi": "Thực tập sinh Backend Java", "en": "Backend Developer Intern (Java)" },
+      "company": {
+        "vi": "Công ty Cổ phần Công nghệ Proton",
+        "en": "Proton Technology JSC"
+      },
+      "role": {
+        "vi": "Thực tập sinh Backend Java",
+        "en": "Backend Developer Intern (Java)"
+      },
       "bullets": [
-        { "vi": "Học và thực hành quy trình phát triển backend theo mô hình microservices tại doanh nghiệp; làm quen với Java 21, Spring Boot 3 và các công cụ hạ tầng (Docker, Redis, ActiveMQ).", "en": "Learned and practiced enterprise backend development with a microservices approach; gained hands-on experience with Java 21, Spring Boot 3, and supporting infrastructure tools (Docker, Redis, ActiveMQ)." },
-        { "vi": "Xây dựng một hệ thống ngân hàng mô phỏng (account, card, balance, payment, notification service) để thực hành: thiết kế API REST, xác thực JWT, caching Redis, giao tiếp bất đồng bộ qua ActiveMQ.", "en": "Built a simulated banking system (account, card, balance, payment, notification services) to practice REST API design, JWT authentication, Redis caching, and asynchronous communication via ActiveMQ." }
+        {
+          "vi": "Học và thực hành quy trình phát triển backend theo mô hình microservices tại doanh nghiệp; làm quen với Java 21, Spring Boot 3 và các công cụ hạ tầng (Docker, Redis, ActiveMQ).",
+          "en": "Learned and practiced enterprise backend development with a microservices approach; gained hands-on experience with Java 21, Spring Boot 3, and supporting infrastructure tools (Docker, Redis, ActiveMQ)."
+        },
+        {
+          "vi": "Xây dựng một hệ thống ngân hàng mô phỏng (account, card, balance, payment, notification service) để thực hành: thiết kế API REST, xác thực JWT, caching Redis, giao tiếp bất đồng bộ qua ActiveMQ.",
+          "en": "Built a simulated banking system (account, card, balance, payment, notification services) to practice REST API design, JWT authentication, Redis caching, and asynchronous communication via ActiveMQ."
+        }
       ]
     }
   ],
@@ -51,16 +107,28 @@
     {
       "date": "2025 – 2026",
       "title": "ROV Management System",
-      "titleSuffix": { "vi": "– Đồ án tốt nghiệp", "en": "– Graduation Thesis" },
-      "meta": { "vi": "Dự án cá nhân | Nền tảng quản lý dữ liệu khảo sát cho phương tiện ROV (Remotely Operated Vehicle)", "en": "Personal project | Web-based mission data management platform for ROVs (Remotely Operated Vehicles)" },
+      "titleSuffix": {
+        "vi": "– Đồ án tốt nghiệp",
+        "en": "– Graduation Thesis"
+      },
+      "meta": {
+        "vi": "Dự án cá nhân | Nền tảng quản lý dữ liệu khảo sát cho phương tiện ROV (Remotely Operated Vehicle)",
+        "en": "Personal project | Web-based mission data management platform for ROVs (Remotely Operated Vehicles)"
+      },
       "github": "https://github.com/thanhleesenpai/rov-management",
       "desc": {
         "vi": "ROV vận hành tại hiện trường (sông, biển, trên tàu) không có kết nối mạng ổn định, và người vận hành cần tập trung điều khiển thiết bị thay vì thao tác thêm hệ thống khác — dữ liệu vì vậy chỉ được ghi offline tại chỗ, cần xem lại và phân tích sau khi nhiệm vụ kết thúc. Dự án xây dựng phân hệ quản lý thông tin nhiệm vụ trên nền web giúp tra cứu, phân tích dữ liệu thuận tiện hơn, đồng thời thử nghiệm triển khai AI phân tích hình ảnh/video.",
         "en": "ROVs operate in the field (rivers, oceans, aboard ships) with no stable network connection, and operators need to focus on controlling the vehicle rather than handling other systems — so data is recorded offline on-site for review and analysis after the mission ends. This project builds a web-based mission information system for easier lookup and analysis, with an experimental AI pipeline for image/video analysis."
       },
       "bullets": [
-        { "vi": "Tính năng nổi bật: tự xây dựng trình xem sonar (canvas) và quỹ đạo DVL (SVG pan/zoom); đồng bộ video–telemetry thời gian thực (\"cockpit\") kèm phát hiện bất thường (Z-score); pipeline nhập liệu đa định dạng tự dò CSV/manifest; xử lý AI bất đồng bộ (Bull, SSE) cho tóm tắt AI và YOLOv8; xác thực JWT + Google OAuth2, RBAC, audit log.", "en": "Key features: built a custom sonar viewer (canvas) and DVL trajectory viewer (SVG pan/zoom) from scratch; real-time video–telemetry sync (\"cockpit\") with anomaly detection (Z-score); multi-format ingestion pipeline that auto-detects CSV/manifest formats; asynchronous AI processing (Bull, SSE) for AI summaries and YOLOv8 object detection; JWT + Google OAuth2 authentication, RBAC, audit log." },
-        { "vi": "Vai trò: Tự thiết kế toàn bộ kiến trúc, đảm nhận frontend, backend và microservice AI; viết functional test và load test (Artillery).", "en": "Role: Solely designed the entire architecture and built the frontend, backend, and AI microservice; wrote functional and load tests (Artillery)." }
+        {
+          "vi": "Tính năng nổi bật: tự xây dựng trình xem sonar (canvas) và quỹ đạo DVL (SVG pan/zoom); đồng bộ video–telemetry thời gian thực (\"cockpit\") kèm phát hiện bất thường (Z-score); pipeline nhập liệu đa định dạng tự dò CSV/manifest; xử lý AI bất đồng bộ (Bull, SSE) cho tóm tắt AI và YOLOv8; xác thực JWT + Google OAuth2, RBAC, audit log.",
+          "en": "Key features: built a custom sonar viewer (canvas) and DVL trajectory viewer (SVG pan/zoom) from scratch; real-time video–telemetry sync (\"cockpit\") with anomaly detection (Z-score); multi-format ingestion pipeline that auto-detects CSV/manifest formats; asynchronous AI processing (Bull, SSE) for AI summaries and YOLOv8 object detection; JWT + Google OAuth2 authentication, RBAC, audit log."
+        },
+        {
+          "vi": "Vai trò: Tự thiết kế toàn bộ kiến trúc, đảm nhận frontend, backend và microservice AI; viết functional test và load test (Artillery).",
+          "en": "Role: Solely designed the entire architecture and built the frontend, backend, and AI microservice; wrote functional and load tests (Artillery)."
+        }
       ],
       "tech": "Node.js + Express, MongoDB Atlas, Redis, AWS S3, Docker Compose, Google Gemini 2.5 Flash, YOLOv8 (FastAPI, Python), React 18 + Vite, Tailwind CSS."
     },
@@ -68,27 +136,75 @@
       "date": "2025 –",
       "title": "Bank Service – Microservices Banking Platform – Spring Boot + React",
       "titleSuffix": null,
-      "meta": { "vi": "Dự án cá nhân", "en": "Personal project" },
+      "meta": {
+        "vi": "Dự án cá nhân",
+        "en": "Personal project"
+      },
       "github": "https://github.com/thanhleesenpai/bankservice-java",
       "desc": {
         "vi": "Backend ngân hàng tách thành 3 microservice Spring Boot độc lập (bank-service, payment-service, notification-service) kèm React frontend: ledger service không giao tiếp trực tiếp với message broker, một giao dịch chuyển tiền là cả một state machine chứ không phải một lệnh atomic đơn lẻ.",
         "en": "A banking backend split into 3 independent Spring Boot microservices (bank-service, payment-service, notification-service) with a React frontend: the ledger service never talks directly to the message broker, and a money transfer is an entire state machine rather than a single atomic call."
       },
       "bullets": [
-        { "vi": "Tính năng nổi bật: luồng chuyển tiền OTP + admin duyệt, tách số dư khả dụng/đang giữ để tránh chi tiêu trùng; sự kiện thanh toán publish qua ActiveMQ Artemis và đẩy real-time cho trình duyệt qua STOMP/WebSocket; JWT thu hồi tức thời qua session Redis; cache-aside thủ công cho account/card/balance; RBAC (USER/ADMIN) với 2 giao diện tách theo vai trò.", "en": "Key features: OTP + admin-approval transfer flow, separated available/hold balances to prevent double-spending; payment events published via ActiveMQ Artemis and pushed live to the browser over STOMP/WebSocket; JWT sessions instantly revocable via Redis; manual cache-aside for account/card/balance data; RBAC (USER/ADMIN) with two role-based interfaces." },
-        { "vi": "Vai trò: Tự thiết kế kiến trúc 3 microservice, xây dựng toàn bộ backend (auth, giao dịch, caching, messaging) và frontend (admin console + customer dashboard); viết unit test cho toàn bộ vòng đời giao dịch (thành công/thất bại).", "en": "Role: Designed the 3-microservice architecture and built the entire backend (auth, transactions, caching, messaging) and frontend (admin console + customer dashboard); wrote unit tests covering the full transaction lifecycle (success/failure cases)." }
+        {
+          "vi": "Tính năng nổi bật: luồng chuyển tiền OTP + admin duyệt, tách số dư khả dụng/đang giữ để tránh chi tiêu trùng; sự kiện thanh toán publish qua ActiveMQ Artemis và đẩy real-time cho trình duyệt qua STOMP/WebSocket; JWT thu hồi tức thời qua session Redis; cache-aside thủ công cho account/card/balance; RBAC (USER/ADMIN) với 2 giao diện tách theo vai trò.",
+          "en": "Key features: OTP + admin-approval transfer flow, separated available/hold balances to prevent double-spending; payment events published via ActiveMQ Artemis and pushed live to the browser over STOMP/WebSocket; JWT sessions instantly revocable via Redis; manual cache-aside for account/card/balance data; RBAC (USER/ADMIN) with two role-based interfaces."
+        },
+        {
+          "vi": "Vai trò: Tự thiết kế kiến trúc 3 microservice, xây dựng toàn bộ backend (auth, giao dịch, caching, messaging) và frontend (admin console + customer dashboard); viết unit test cho toàn bộ vòng đời giao dịch (thành công/thất bại).",
+          "en": "Role: Designed the 3-microservice architecture and built the entire backend (auth, transactions, caching, messaging) and frontend (admin console + customer dashboard); wrote unit tests covering the full transaction lifecycle (success/failure cases)."
+        }
       ],
       "tech": "Java 21, Spring Boot 3.5, Spring Security (JWT), Spring JMS + ActiveMQ Artemis, Spring WebSocket/STOMP, Redis, MySQL 8, JUnit 5, Mockito, Docker Compose, React 19 + Vite, MUI, React Router v6."
     }
   ],
   "certifications": [
-    { "date": "2024", "title": "TOEIC: 715" }
+    {
+      "date": "2024",
+      "title": "TOEIC: 715"
+    }
   ],
   "skills": [
-    { "label": { "vi": "Backend & Dữ liệu:", "en": "Backend & Data:" }, "value": "Java, Spring Boot, Node.js, PHP, MongoDB, MySQL, Redis, ActiveMQ, Bull (job queue), SSE, REST API, JWT." },
-    { "label": { "vi": "Frontend:", "en": "Frontend:" }, "value": "JavaScript, ReactJS, Redux, Material UI, Tailwind CSS, HTML/CSS, WebSocket." },
-    { "label": { "vi": "Công cụ & Khác:", "en": "Tools & Others:" }, "value": "Docker/Docker Compose, Git, Linux/VPS, Apache, JUnit, Mockito, Postman, AWS S3." },
-    { "label": { "vi": "Ngoại ngữ:", "en": "Languages:" }, "value": { "vi": "Tiếng Anh (TOEIC 715), Tiếng Nhật (~N3, giao tiếp cơ bản, chưa thi chứng chỉ).", "en": "English (TOEIC 715), Japanese (~N3, basic conversational, no certificate yet)." } },
-    { "label": { "vi": "Sở thích:", "en": "Interests:" }, "value": { "vi": "Bóng đá, cầu lông.", "en": "Football, badminton." } }
+    {
+      "label": {
+        "vi": "Backend & Dữ liệu:",
+        "en": "Backend & Data:"
+      },
+      "value": "Java, Spring Boot, Node.js, PHP, MongoDB, MySQL, Redis, ActiveMQ, Bull (job queue), SSE, REST API, JWT."
+    },
+    {
+      "label": {
+        "vi": "Frontend:",
+        "en": "Frontend:"
+      },
+      "value": "JavaScript, ReactJS, Redux, Material UI, Tailwind CSS, HTML/CSS, WebSocket."
+    },
+    {
+      "label": {
+        "vi": "Công cụ & Khác:",
+        "en": "Tools & Others:"
+      },
+      "value": "Docker/Docker Compose, Git, Linux/VPS, Apache, JUnit, Mockito, Postman, AWS S3."
+    },
+    {
+      "label": {
+        "vi": "Ngoại ngữ:",
+        "en": "Languages:"
+      },
+      "value": {
+        "vi": "Tiếng Anh (TOEIC 715), Tiếng Nhật (~N3, chưa thi chứng chỉ).",
+        "en": "English (TOEIC 715), Japanese (~N3, no certificate yet)."
+      }
+    },
+    {
+      "label": {
+        "vi": "Sở thích:",
+        "en": "Interests:"
+      },
+      "value": {
+        "vi": "Bóng đá, cầu lông.",
+        "en": "Football, badminton."
+      }
+    }
   ]
 }
