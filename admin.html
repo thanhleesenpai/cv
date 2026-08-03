@@ -5,113 +5,138 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Sửa CV</title>
+<link rel="stylesheet" href="cv-style.css">
 <style>
-  :root{
-    --bg:#0f1115; --panel:#171a21; --border:#2a2f3a; --text:#e8eaf0;
-    --text-dim:#a3a9b8; --accent:#5b8cff; --danger:#e5566b; --ok:#3ecf8e;
+  .admin-bar{
+    position:sticky; top:0; z-index:20;
+    display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+    padding:10px 16px;
+    background:#15171c; color:#e4e6ea;
+    border-bottom:1px solid #33363f;
   }
-  *{ box-sizing:border-box; }
-  body{
-    margin:0; min-height:100vh;
-    background:var(--bg); color:var(--text);
-    font-family:Arial, Helvetica, "Segoe UI", sans-serif;
-    display:flex; flex-direction:column; align-items:center;
-    padding:24px 16px 60px;
+  .admin-bar input[type="password"]{
+    padding:6px 10px; border-radius:6px; border:1px solid #33363f;
+    background:#0f1115; color:#e4e6ea; font-size:13px; width:200px;
   }
-  h1{ font-size:20px; margin:0 0 4px; }
-  .hint{ color:var(--text-dim); font-size:13px; margin-bottom:20px; }
-  .card{
-    width:100%; max-width:900px;
-    background:var(--panel); border:1px solid var(--border);
-    border-radius:12px; padding:20px;
-  }
-  label{ display:block; font-size:13px; color:var(--text-dim); margin-bottom:6px; }
-  input[type="password"]{
-    width:100%; padding:10px 12px; border-radius:8px;
-    border:1px solid var(--border); background:#0f1115; color:var(--text);
-    font-size:14px; margin-bottom:16px;
-  }
-  textarea{
-    width:100%; height:60vh; min-height:400px;
-    padding:14px; border-radius:8px;
-    border:1px solid var(--border); background:#0b0d12; color:var(--text);
+  .admin-bar .btn{ border-color:#33363f; color:#c7cad1; }
+  .admin-bar .btn.active{ background:#7fb0ff; color:#0f1115; border-color:#7fb0ff; }
+  .admin-bar .msg{ font-size:12.5px; margin-left:auto; }
+  .admin-bar .msg.ok{ color:#3ecf8e; }
+  .admin-bar .msg.err{ color:#ff8080; }
+  .admin-bar .spacer{ width:1px; height:20px; background:#33363f; margin:0 4px; }
+
+  #json-view{ display:none; }
+  #json-view textarea{
+    width:100%; height:70vh; min-height:400px;
+    padding:14px; border-radius:8px; box-sizing:border-box;
+    border:1px solid var(--border); background:#0b0d12; color:#e4e6ea;
     font-family:"Cascadia Code", Consolas, monospace; font-size:13px;
     line-height:1.5; resize:vertical; tab-size:2;
   }
-  .row{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; align-items:center; }
-  button{
-    border:none; border-radius:8px; padding:10px 18px;
-    font-size:14px; font-weight:600; cursor:pointer;
-  }
-  #save-btn{ background:var(--accent); color:#fff; }
-  #reload-btn{ background:transparent; color:var(--text); border:1px solid var(--border); }
-  #save-btn:disabled{ opacity:.6; cursor:not-allowed; }
-  .msg{ font-size:13px; margin-left:auto; }
-  .msg.ok{ color:var(--ok); }
-  .msg.err{ color:var(--danger); }
 </style>
 </head>
 <body>
 
-<h1>Sửa nội dung CV</h1>
-<div class="hint">Sửa trực tiếp JSON bên dưới rồi bấm Lưu — thay đổi sẽ được commit vào GitHub và trang CV tự deploy lại sau ít phút.</div>
-
-<div class="card">
-  <label for="password">Mật khẩu</label>
-  <input type="password" id="password" autocomplete="current-password" placeholder="Nhập mật khẩu quản trị">
-
-  <label for="content">Nội dung (data.json)</label>
-  <textarea id="content" spellcheck="false"></textarea>
-
-  <div class="row">
-    <button id="save-btn">Lưu thay đổi</button>
-    <button id="reload-btn" type="button">Tải lại từ server</button>
-    <span class="msg" id="msg"></span>
-  </div>
+<div class="admin-bar">
+  <input type="password" id="password" autocomplete="current-password" placeholder="Mật khẩu quản trị">
+  <button class="btn primary" id="save-btn">Lưu thay đổi</button>
+  <button class="btn" id="reload-btn" type="button">Tải lại</button>
+  <div class="spacer"></div>
+  <button class="btn view-btn active" data-view="visual">Giao diện</button>
+  <button class="btn view-btn" data-view="json">JSON</button>
+  <div class="spacer"></div>
+  <button class="btn lang-btn active" data-lang="vi">VI</button>
+  <button class="btn lang-btn" data-lang="en">EN</button>
+  <span class="msg" id="msg"></span>
 </div>
 
+<div class="wrap" id="visual-view">
+  <div id="app">Đang tải...</div>
+</div>
+
+<div class="wrap" id="json-view">
+  <textarea id="json-text" spellcheck="false"></textarea>
+</div>
+
+<script src="cv-render.js"></script>
 <script>
-  const contentEl = document.getElementById('content');
-  const passwordEl = document.getElementById('password');
+  let cv = null;
+  let lang = 'vi';
+  let view = 'visual';
+
   const msgEl = document.getElementById('msg');
-  const saveBtn = document.getElementById('save-btn');
-  const reloadBtn = document.getElementById('reload-btn');
+  const passwordEl = document.getElementById('password');
+  const jsonTextEl = document.getElementById('json-text');
+  const visualViewEl = document.getElementById('visual-view');
+  const jsonViewEl = document.getElementById('json-view');
 
   function setMsg(text, kind){
     msgEl.textContent = text;
     msgEl.className = 'msg' + (kind ? ' ' + kind : '');
   }
 
+  function renderVisual(){
+    if (!cv) return;
+    CVRender.mount(document.getElementById('app'), cv, lang, true);
+  }
+
+  function setLang(l){
+    lang = l;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+    renderVisual();
+  }
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setLang(btn.dataset.lang)));
+
+  function setView(v){
+    if (view === 'json' && v === 'visual'){
+      // leaving JSON tab: parse it back into cv before switching
+      try {
+        cv = JSON.parse(jsonTextEl.value);
+        setMsg('', '');
+      } catch (e) {
+        setMsg('JSON không hợp lệ, chưa thể chuyển tab: ' + e.message, 'err');
+        return;
+      }
+    }
+    if (view === 'visual' && v === 'json'){
+      jsonTextEl.value = JSON.stringify(cv, null, 2);
+    }
+    view = v;
+    document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === v));
+    visualViewEl.style.display = v === 'visual' ? 'block' : 'none';
+    jsonViewEl.style.display = v === 'json' ? 'block' : 'none';
+    if (v === 'visual') renderVisual();
+  }
+  document.querySelectorAll('.view-btn').forEach(btn => btn.addEventListener('click', () => setView(btn.dataset.view)));
+
   function loadData(){
     setMsg('Đang tải...', '');
     return fetch('data.json?v=' + Date.now())
       .then(r => r.json())
-      .then(data => { contentEl.value = JSON.stringify(data, null, 2); setMsg('Đã tải nội dung mới nhất.', 'ok'); })
+      .then(data => { cv = data; renderVisual(); setMsg('Đã tải nội dung mới nhất.', 'ok'); })
       .catch(err => setMsg('Không tải được data.json: ' + err, 'err'));
   }
 
-  reloadBtn.addEventListener('click', () => {
+  document.getElementById('reload-btn').addEventListener('click', () => {
     if (confirm('Bỏ thay đổi hiện tại và tải lại từ server?')) loadData();
   });
 
-  saveBtn.addEventListener('click', () => {
-    let parsed;
-    try {
-      parsed = JSON.parse(contentEl.value);
-    } catch (e) {
-      setMsg('JSON không hợp lệ: ' + e.message, 'err');
-      return;
+  document.getElementById('save-btn').addEventListener('click', () => {
+    if (view === 'json'){
+      try { cv = JSON.parse(jsonTextEl.value); }
+      catch (e) { setMsg('JSON không hợp lệ: ' + e.message, 'err'); return; }
     }
     if (!passwordEl.value){
       setMsg('Nhập mật khẩu trước đã.', 'err');
       return;
     }
+    const saveBtn = document.getElementById('save-btn');
     saveBtn.disabled = true;
     setMsg('Đang lưu...', '');
     fetch('/api/save-cv', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password: passwordEl.value, content: parsed })
+      body: JSON.stringify({ password: passwordEl.value, content: cv })
     })
       .then(async r => {
         const body = await r.json().catch(() => ({}));
