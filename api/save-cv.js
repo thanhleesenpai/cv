@@ -23,6 +23,11 @@ module.exports = async function handler(req, res) {
     return;
   }
 
+  content.meta = content.meta || {};
+  content.meta.updated = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Ho_Chi_Minh', day: '2-digit', month: '2-digit', year: 'numeric'
+  }).format(new Date());
+
   const owner = process.env.GITHUB_OWNER || 'thanhleesenpai';
   const repo = process.env.GITHUB_REPO || 'cv';
   const branch = process.env.GITHUB_BRANCH || 'main';
