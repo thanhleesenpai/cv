@@ -73,6 +73,7 @@
     padding:18mm 16mm;
     background:var(--bg);
     box-shadow:0 1px 4px rgba(0,0,0,.15), 0 8px 24px rgba(0,0,0,.12);
+    min-height:40vh;
   }
 
   .header{
@@ -96,7 +97,6 @@
   .header h1{ margin:0 0 4px; font-size:30px; color:var(--heading); font-weight:800; }
   .header .role{ font-size:18px; font-weight:700; margin-bottom:10px; color:var(--heading); }
   .info-line{ font-weight:700; font-size:14.5px; margin-bottom:2px; }
-  .info-line .label{ display:inline-block; }
 
   h2.section-title{
     font-size:19px;
@@ -183,221 +183,190 @@
 <body>
 
 <div class="topbar">
-  <button class="btn primary" id="download-btn">
-    <span class="lang-vi">⬇ Tải CV PDF</span>
-    <span class="lang-en">⬇ Download PDF</span>
-  </button>
+  <button class="btn primary" id="download-btn">⬇ <span id="download-label">Tải CV PDF</span></button>
   <button class="btn lang-btn" data-lang="vi">VI</button>
   <button class="btn lang-btn" data-lang="en">EN</button>
   <button class="btn" id="theme-toggle">Dark/Light</button>
 </div>
 
 <div class="wrap">
-
-  <section class="header">
-    <div class="avatar-wrap">
-      <img id="avatar" src="photo.jpg" alt="Lê Minh Thành"
-        onerror="if(this.dataset.step!=='png'){this.dataset.step='png'; this.src='photo.png';} else { this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex'; }">
-      <div class="avatar-fallback" id="avatar-fallback">LMT</div>
-    </div>
-    <div>
-      <h1>Lê Minh Thành</h1>
-      <div class="role">Backend Developer</div>
-      <div class="info-line lang-vi">Ngày sinh: 20/07/2004</div>
-      <div class="info-line lang-en">Dob: 20/07/2004</div>
-      <div class="info-line lang-vi">Giới tính: Nam</div>
-      <div class="info-line lang-en">Gender: Male</div>
-      <div class="info-line lang-vi">Số điện thoại: 0969204873</div>
-      <div class="info-line lang-en">Phone: 0969204873</div>
-      <div class="info-line">Email: <a href="mailto:thanhle20072004@gmail.com">thanhle20072004@gmail.com</a></div>
-      <div class="info-line lang-vi">Địa chỉ: Hà Nội</div>
-      <div class="info-line lang-en">Address: Hanoi, Vietnam</div>
-      <div class="info-line">Github: <a href="https://github.com/thanhleesenpai" target="_blank" rel="noopener">github.com/thanhleesenpai</a></div>
-      <div class="info-line">LinkedIn: <a href="https://linkedin.com/in/thanhminhle" target="_blank" rel="noopener">linkedin.com/in/thanhminhle</a></div>
-    </div>
-  </section>
-
-  <section class="block">
-    <h2 class="section-title lang-vi">GIỚI THIỆU BẢN THÂN</h2>
-    <h2 class="section-title lang-en">ABOUT ME</h2>
-    <p class="lang-vi">Cử nhân CNTT vừa hoàn thành chương trình Việt Nhật (ITe6) tại ĐH Bách Khoa Hà Nội, có kinh nghiệm xây dựng ứng dụng fullstack qua các dự án cá nhân với kiến trúc thực tế (microservices, xử lý bất đồng bộ, tích hợp AI) và 2 kỳ thực tập backend. Mong muốn ứng tuyển vị trí Thực tập sinh (Intern)/Fresher Backend hoặc Full-stack Developer để tiếp tục phát triển chuyên môn và đóng góp vào sản phẩm thực tế.</p>
-    <p class="lang-en">Bachelor of IT who has just completed the Vietnam–Japan Program (ITe6) at Hanoi University of Science and Technology, with hands-on full-stack experience building personal projects with real-world architecture (microservices, asynchronous processing, AI integration) and two backend internships. Seeking an Internship/Fresher Backend or Full-stack Developer role to further develop my skills and contribute to real-world products.</p>
-  </section>
-
-  <section class="block">
-    <h2 class="section-title lang-vi">HỌC VẤN</h2>
-    <h2 class="section-title lang-en">EDUCATION</h2>
-    <div class="entry-row">
-      <div class="date-col">2022 – 2026</div>
-      <div class="content-col">
-        <div class="title lang-vi">Trường: Đại học Bách Khoa Hà Nội</div>
-        <div class="title lang-en">Hanoi University of Science and Technology</div>
-        <div class="subtitle lang-vi">Chuyên ngành: Công nghệ Thông tin Việt Nhật (ITe6)</div>
-        <div class="subtitle lang-en">Vietnam–Japan Information Technology Program (ITe6)</div>
-        <p class="desc lang-vi"><em>Đã hoàn thành chương trình học | GPA: 3.1/4.0</em></p>
-        <p class="desc lang-en"><em>Coursework completed | GPA: 3.1/4.0</em></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <h2 class="section-title lang-vi">KINH NGHIỆM LÀM VIỆC</h2>
-    <h2 class="section-title lang-en">WORK EXPERIENCE</h2>
-
-    <div class="entry-row">
-      <div class="date-col">13/09/2025 – 08/01/2026</div>
-      <div class="content-col">
-        <div class="title lang-vi">Công ty TNHH Công nghệ Pip Việt Nam</div>
-        <div class="title lang-en">Pip Vietnam Technology Co., Ltd</div>
-        <div class="subtitle lang-vi">Thực tập sinh Backend PHP</div>
-        <div class="subtitle lang-en">Backend Developer Intern (PHP)</div>
-        <ul class="lang-vi">
-          <li>Xây dựng và chỉnh sửa API phục vụ Website và hệ thống CMS nội bộ (quản lý sản phẩm, tài liệu, danh mục, v.v.).</li>
-          <li>Xử lý sitemap và robots.txt; truy cập và thao tác trực tiếp trên VPS qua SSH (deploy, cấu hình); khắc phục lỗi upload, editor và dữ liệu liên quan đến Apache/PHP và quyền thư mục.</li>
-          <li>Đảm bảo các API hoạt động ổn định, đáp ứng đúng yêu cầu nghiệp vụ do team giao theo từng đợt (ticket-based).</li>
-        </ul>
-        <ul class="lang-en">
-          <li>Built and modified APIs for the company website and internal CMS (product, document, and category management, etc.).</li>
-          <li>Handled sitemap and robots.txt for SEO; accessed and worked directly on a VPS via SSH (deployment, configuration); fixed upload, editor, and data issues related to Apache/PHP and folder permissions.</li>
-          <li>Kept APIs stable and met business requirements assigned by the team on a ticket basis.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry-row">
-      <div class="date-col">28/07/2025 – 28/08/2025</div>
-      <div class="content-col">
-        <div class="title lang-vi">Công ty Cổ phần Công nghệ Proton</div>
-        <div class="title lang-en">Proton Technology JSC</div>
-        <div class="subtitle lang-vi">Thực tập sinh Backend Java</div>
-        <div class="subtitle lang-en">Backend Developer Intern (Java)</div>
-        <ul class="lang-vi">
-          <li>Học và thực hành quy trình phát triển backend theo mô hình microservices tại doanh nghiệp; làm quen với Java 21, Spring Boot 3 và các công cụ hạ tầng (Docker, Redis, ActiveMQ).</li>
-          <li>Xây dựng một hệ thống ngân hàng mô phỏng (account, card, balance, payment, notification service) để thực hành: thiết kế API REST, xác thực JWT, caching Redis, giao tiếp bất đồng bộ qua ActiveMQ.</li>
-        </ul>
-        <ul class="lang-en">
-          <li>Learned and practiced enterprise backend development with a microservices approach; gained hands-on experience with Java 21, Spring Boot 3, and supporting infrastructure tools (Docker, Redis, ActiveMQ).</li>
-          <li>Built a simulated banking system (account, card, balance, payment, notification services) to practice REST API design, JWT authentication, Redis caching, and asynchronous communication via ActiveMQ.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <h2 class="section-title lang-vi">DỰ ÁN</h2>
-    <h2 class="section-title lang-en">PROJECTS</h2>
-
-    <div class="entry-row">
-      <div class="date-col">2025 – 2026</div>
-      <div class="content-col">
-        <div class="title">
-          ROV Management System
-          <span class="lang-vi">– Đồ án tốt nghiệp</span>
-          <span class="lang-en">– Graduation Thesis</span>
-        </div>
-        <div class="meta-line lang-vi">Dự án cá nhân | Nền tảng quản lý dữ liệu khảo sát cho phương tiện ROV (Remotely Operated Vehicle)</div>
-        <div class="meta-line lang-en">Personal project | Web-based mission data management platform for ROVs (Remotely Operated Vehicles)</div>
-        <div class="meta-line">GitHub: <a href="https://github.com/thanhleesenpai/rov-management" target="_blank" rel="noopener">github.com/thanhleesenpai/rov-management</a></div>
-        <p class="desc lang-vi">ROV vận hành tại hiện trường (sông, biển, trên tàu) không có kết nối mạng ổn định, và người vận hành cần tập trung điều khiển thiết bị thay vì thao tác thêm hệ thống khác — dữ liệu vì vậy chỉ được ghi offline tại chỗ, cần xem lại và phân tích sau khi nhiệm vụ kết thúc. Dự án xây dựng phân hệ quản lý thông tin nhiệm vụ trên nền web giúp tra cứu, phân tích dữ liệu thuận tiện hơn, đồng thời thử nghiệm triển khai AI phân tích hình ảnh/video.</p>
-        <p class="desc lang-en">ROVs operate in the field (rivers, oceans, aboard ships) with no stable network connection, and operators need to focus on controlling the vehicle rather than handling other systems — so data is recorded offline on-site for review and analysis after the mission ends. This project builds a web-based mission information system for easier lookup and analysis, with an experimental AI pipeline for image/video analysis.</p>
-        <ul class="lang-vi">
-          <li>Tính năng nổi bật: tự xây dựng trình xem sonar (canvas) và quỹ đạo DVL (SVG pan/zoom); đồng bộ video–telemetry thời gian thực ("cockpit") kèm phát hiện bất thường (Z-score); pipeline nhập liệu đa định dạng tự dò CSV/manifest; xử lý AI bất đồng bộ (Bull, SSE) cho tóm tắt AI và YOLOv8; xác thực JWT + Google OAuth2, RBAC, audit log.</li>
-          <li>Vai trò: Tự thiết kế toàn bộ kiến trúc, đảm nhận frontend, backend và microservice AI; viết functional test và load test (Artillery).</li>
-        </ul>
-        <ul class="lang-en">
-          <li>Key features: built a custom sonar viewer (canvas) and DVL trajectory viewer (SVG pan/zoom) from scratch; real-time video–telemetry sync ("cockpit") with anomaly detection (Z-score); multi-format ingestion pipeline that auto-detects CSV/manifest formats; asynchronous AI processing (Bull, SSE) for AI summaries and YOLOv8 object detection; JWT + Google OAuth2 authentication, RBAC, audit log.</li>
-          <li>Role: Solely designed the entire architecture and built the frontend, backend, and AI microservice; wrote functional and load tests (Artillery).</li>
-        </ul>
-        <div class="tech-line"><b class="lang-vi">Công nghệ sử dụng:</b><b class="lang-en">Tech stack:</b> Node.js + Express, MongoDB Atlas, Redis, AWS S3, Docker Compose, Google Gemini 2.5 Flash, YOLOv8 (FastAPI, Python), React 18 + Vite, Tailwind CSS.</div>
-      </div>
-    </div>
-
-    <div class="entry-row">
-      <div class="date-col">2025 –</div>
-      <div class="content-col">
-        <div class="title">Bank Service – Microservices Banking Platform – Spring Boot + React</div>
-        <div class="meta-line lang-vi">Dự án cá nhân</div>
-        <div class="meta-line lang-en">Personal project</div>
-        <div class="meta-line">GitHub: <a href="https://github.com/thanhleesenpai/bankservice-java" target="_blank" rel="noopener">github.com/thanhleesenpai/bankservice-java</a></div>
-        <p class="desc lang-vi">Backend ngân hàng tách thành 3 microservice Spring Boot độc lập (bank-service, payment-service, notification-service) kèm React frontend: ledger service không giao tiếp trực tiếp với message broker, một giao dịch chuyển tiền là cả một state machine chứ không phải một lệnh atomic đơn lẻ.</p>
-        <p class="desc lang-en">A banking backend split into 3 independent Spring Boot microservices (bank-service, payment-service, notification-service) with a React frontend: the ledger service never talks directly to the message broker, and a money transfer is an entire state machine rather than a single atomic call.</p>
-        <ul class="lang-vi">
-          <li>Tính năng nổi bật: luồng chuyển tiền OTP + admin duyệt, tách số dư khả dụng/đang giữ để tránh chi tiêu trùng; sự kiện thanh toán publish qua ActiveMQ Artemis và đẩy real-time cho trình duyệt qua STOMP/WebSocket; JWT thu hồi tức thời qua session Redis; cache-aside thủ công cho account/card/balance; RBAC (USER/ADMIN) với 2 giao diện tách theo vai trò.</li>
-          <li>Vai trò: Tự thiết kế kiến trúc 3 microservice, xây dựng toàn bộ backend (auth, giao dịch, caching, messaging) và frontend (admin console + customer dashboard); viết unit test cho toàn bộ vòng đời giao dịch (thành công/thất bại).</li>
-        </ul>
-        <ul class="lang-en">
-          <li>Key features: OTP + admin-approval transfer flow, separated available/hold balances to prevent double-spending; payment events published via ActiveMQ Artemis and pushed live to the browser over STOMP/WebSocket; JWT sessions instantly revocable via Redis; manual cache-aside for account/card/balance data; RBAC (USER/ADMIN) with two role-based interfaces.</li>
-          <li>Role: Designed the 3-microservice architecture and built the entire backend (auth, transactions, caching, messaging) and frontend (admin console + customer dashboard); wrote unit tests covering the full transaction lifecycle (success/failure cases).</li>
-        </ul>
-        <div class="tech-line"><b class="lang-vi">Công nghệ sử dụng:</b><b class="lang-en">Tech stack:</b> Java 21, Spring Boot 3.5, Spring Security (JWT), Spring JMS + ActiveMQ Artemis, Spring WebSocket/STOMP, Redis, MySQL 8, JUnit 5, Mockito, Docker Compose, React 19 + Vite, MUI, React Router v6.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <h2 class="section-title lang-vi">CHỨNG CHỈ</h2>
-    <h2 class="section-title lang-en">CERTIFICATIONS</h2>
-    <div class="entry-row">
-      <div class="date-col">2024</div>
-      <div class="content-col">
-        <div class="title">TOEIC: 715</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <h2 class="section-title lang-vi">CÁC KỸ NĂNG & SỞ THÍCH</h2>
-    <h2 class="section-title lang-en">SKILLS</h2>
-    <dl class="skills-grid">
-      <dt class="lang-vi">Backend & Dữ liệu:</dt>
-      <dt class="lang-en">Backend & Data:</dt>
-      <dd>Java, Spring Boot, Node.js, PHP, MongoDB, MySQL, Redis, ActiveMQ, Bull (job queue), SSE, REST API, JWT.</dd>
-
-      <dt>Frontend:</dt>
-      <dd>JavaScript, ReactJS, Redux, Material UI, Tailwind CSS, HTML/CSS, WebSocket.</dd>
-
-      <dt class="lang-vi">Công cụ & Khác:</dt>
-      <dt class="lang-en">Tools & Others:</dt>
-      <dd>Docker/Docker Compose, Git, Linux/VPS, Apache, JUnit, Mockito, Postman, AWS S3.</dd>
-
-      <dt class="lang-vi">Ngoại ngữ:</dt>
-      <dt class="lang-en">Languages:</dt>
-      <dd>
-        <span class="lang-vi">Tiếng Anh (TOEIC 715), Tiếng Nhật (~N3, giao tiếp cơ bản, chưa thi chứng chỉ).</span>
-        <span class="lang-en">English (TOEIC 715), Japanese (~N3, basic conversational, no certificate yet).</span>
-      </dd>
-
-      <dt class="lang-vi">Sở thích:</dt>
-      <dt class="lang-en">Interests:</dt>
-      <dd><span class="lang-vi">Bóng đá, cầu lông.</span><span class="lang-en">Football, badminton.</span></dd>
-    </dl>
-  </section>
-
-  <footer>
-    <span class="lang-vi">Cập nhật lần cuối: 07/2026</span>
-    <span class="lang-en">Last updated: 07/2026</span>
-  </footer>
-
+  <div id="app"></div>
 </div>
 
 <script>
-  const body = document.body;
-  const langButtons = document.querySelectorAll('.lang-btn');
-  const themeBtn = document.getElementById('theme-toggle');
+  const UI = {
+    vi: { about:"GIỚI THIỆU BẢN THÂN", education:"HỌC VẤN", experience:"KINH NGHIỆM LÀM VIỆC",
+          projects:"DỰ ÁN", certifications:"CHỨNG CHỈ", skills:"CÁC KỸ NĂNG & SỞ THÍCH",
+          updated:"Cập nhật lần cuối", tech:"Công nghệ sử dụng:", download:"Tải CV PDF",
+          github:"GitHub" },
+    en: { about:"ABOUT ME", education:"EDUCATION", experience:"WORK EXPERIENCE",
+          projects:"PROJECTS", certifications:"CERTIFICATIONS", skills:"SKILLS",
+          updated:"Last updated", tech:"Tech stack:", download:"Download PDF",
+          github:"GitHub" }
+  };
+
+  let cv = null;
+  let lang = 'vi';
+
+  function t(field){
+    if (field == null) return '';
+    if (typeof field === 'string') return field;
+    return field[lang] != null ? field[lang] : (field.vi || '');
+  }
+
+  function el(tag, opts, children){
+    opts = opts || {};
+    const e = document.createElement(tag);
+    if (opts.class) e.className = opts.class;
+    if (opts.text != null) e.textContent = opts.text;
+    if (opts.href != null){ e.href = opts.href; e.target = '_blank'; e.rel = 'noopener'; }
+    (children || []).forEach(c => { if (c) e.appendChild(c); });
+    return e;
+  }
+
+  function sectionTitle(key){
+    return el('h2', { class:'section-title', text: UI[lang][key] });
+  }
+
+  function renderHeader(){
+    const p = cv.person;
+    const avatarWrap = el('div', { class:'avatar-wrap' });
+    const img = document.createElement('img');
+    img.id = 'avatar'; img.alt = p.name; img.src = p.photo || 'photo.jpg';
+    img.onerror = function(){
+      if (this.dataset.step !== 'png'){ this.dataset.step='png'; this.src = (p.photo||'photo').replace(/\.\w+$/,'') + '.png'; }
+      else { this.style.display='none'; fallback.style.display='flex'; }
+    };
+    const fallback = el('div', { class:'avatar-fallback', text: p.name.split(' ').slice(-2).map(w=>w[0]).join('').toUpperCase() });
+    avatarWrap.appendChild(img); avatarWrap.appendChild(fallback);
+
+    const infoBox = el('div');
+    infoBox.appendChild(el('h1', { text: p.name }));
+    infoBox.appendChild(el('div', { class:'role', text: p.role }));
+    p.infoLines.forEach(line => infoBox.appendChild(el('div', { class:'info-line', text: t(line) })));
+    const emailLine = el('div', { class:'info-line' });
+    emailLine.append('Email: ');
+    emailLine.appendChild(el('a', { text: p.email, href: 'mailto:' + p.email }));
+    infoBox.appendChild(emailLine);
+    const ghLine = el('div', { class:'info-line' });
+    ghLine.append('Github: ');
+    ghLine.appendChild(el('a', { text: p.github.label, href: p.github.url }));
+    infoBox.appendChild(ghLine);
+    if (p.linkedin){
+      const liLine = el('div', { class:'info-line' });
+      liLine.append('LinkedIn: ');
+      liLine.appendChild(el('a', { text: p.linkedin.label, href: p.linkedin.url }));
+      infoBox.appendChild(liLine);
+    }
+
+    return el('section', { class:'header' }, [avatarWrap, infoBox]);
+  }
+
+  function renderAbout(){
+    return el('section', { class:'block' }, [
+      sectionTitle('about'),
+      el('p', { text: t(cv.about) })
+    ]);
+  }
+
+  function renderEducation(){
+    const rows = cv.education.map(edu => el('div', { class:'entry-row' }, [
+      el('div', { class:'date-col', text: edu.date }),
+      el('div', { class:'content-col' }, [
+        el('div', { class:'title', text: t(edu.title) }),
+        el('div', { class:'subtitle', text: t(edu.subtitle) }),
+        el('p', { class:'desc' }, [ el('em', { text: t(edu.note) }) ])
+      ])
+    ]));
+    return el('section', { class:'block' }, [sectionTitle('education'), ...rows]);
+  }
+
+  function renderExperience(){
+    const rows = cv.experience.map(job => el('div', { class:'entry-row' }, [
+      el('div', { class:'date-col', text: job.date }),
+      el('div', { class:'content-col' }, [
+        el('div', { class:'title', text: t(job.company) }),
+        el('div', { class:'subtitle', text: t(job.role) }),
+        el('ul', {}, job.bullets.map(b => el('li', { text: t(b) })))
+      ])
+    ]));
+    return el('section', { class:'block' }, [sectionTitle('experience'), ...rows]);
+  }
+
+  function renderProjects(){
+    const rows = cv.projects.map(pr => {
+      const titleDiv = el('div', { class:'title' });
+      titleDiv.append(pr.title + ' ');
+      if (pr.titleSuffix) titleDiv.append(t(pr.titleSuffix));
+      const ghLine = el('div', { class:'meta-line' });
+      ghLine.append('GitHub: ');
+      ghLine.appendChild(el('a', { text: pr.github.replace(/^https?:\/\//,''), href: pr.github }));
+      const techLine = el('div', { class:'tech-line' }, [
+        el('b', { text: UI[lang].tech + ' ' })
+      ]);
+      techLine.append(pr.tech);
+      return el('div', { class:'entry-row' }, [
+        el('div', { class:'date-col', text: pr.date }),
+        el('div', { class:'content-col' }, [
+          titleDiv,
+          el('div', { class:'meta-line', text: t(pr.meta) }),
+          ghLine,
+          el('p', { class:'desc', text: t(pr.desc) }),
+          el('ul', {}, pr.bullets.map(b => el('li', { text: t(b) }))),
+          techLine
+        ])
+      ]);
+    });
+    return el('section', { class:'block' }, [sectionTitle('projects'), ...rows]);
+  }
+
+  function renderCertifications(){
+    const rows = cv.certifications.map(c => el('div', { class:'entry-row' }, [
+      el('div', { class:'date-col', text: c.date }),
+      el('div', { class:'content-col' }, [ el('div', { class:'title', text: c.title }) ])
+    ]));
+    return el('section', { class:'block' }, [sectionTitle('certifications'), ...rows]);
+  }
+
+  function renderSkills(){
+    const dl = el('dl', { class:'skills-grid' });
+    cv.skills.forEach(s => {
+      dl.appendChild(el('dt', { text: t(s.label) }));
+      dl.appendChild(el('dd', { text: t(s.value) }));
+    });
+    return el('section', { class:'block' }, [sectionTitle('skills'), dl]);
+  }
+
+  function renderFooter(){
+    return el('footer', { text: UI[lang].updated + ': ' + cv.meta.updated });
+  }
+
+  function render(){
+    const app = document.getElementById('app');
+    app.innerHTML = '';
+    app.appendChild(renderHeader());
+    app.appendChild(renderAbout());
+    app.appendChild(renderEducation());
+    app.appendChild(renderExperience());
+    app.appendChild(renderProjects());
+    app.appendChild(renderCertifications());
+    app.appendChild(renderSkills());
+    app.appendChild(renderFooter());
+    document.getElementById('download-label').textContent = UI[lang].download;
+  }
+
+  function setLang(l){
+    lang = l;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+    document.documentElement.lang = l;
+    localStorage.setItem('cv-lang', l);
+    if (cv) render();
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => setLang(btn.dataset.lang)));
   document.getElementById('download-btn').addEventListener('click', () => window.print());
 
-  function setLang(lang){
-    document.querySelectorAll('.lang-vi').forEach(el => { el.style.display = lang === 'vi' ? '' : 'none'; });
-    document.querySelectorAll('.lang-en').forEach(el => { el.style.display = lang === 'en' ? '' : 'none'; });
-    langButtons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
-    document.documentElement.lang = lang;
-    localStorage.setItem('cv-lang', lang);
-  }
-  langButtons.forEach(btn => btn.addEventListener('click', () => setLang(btn.dataset.lang)));
-
-  const browserLang = (navigator.language || 'vi').toLowerCase().startsWith('en') ? 'en' : 'vi';
-  setLang(localStorage.getItem('cv-lang') || browserLang);
-
+  const themeBtn = document.getElementById('theme-toggle');
   function setTheme(theme){
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('cv-theme', theme);
@@ -408,6 +377,16 @@
   });
   const savedTheme = localStorage.getItem('cv-theme');
   if (savedTheme) setTheme(savedTheme);
+
+  const browserLang = (navigator.language || 'vi').toLowerCase().startsWith('en') ? 'en' : 'vi';
+  const initialLang = localStorage.getItem('cv-lang') || browserLang;
+
+  fetch('data.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(data => { cv = data; setLang(initialLang); })
+    .catch(err => {
+      document.getElementById('app').textContent = 'Không tải được nội dung CV (data.json). ' + err;
+    });
 </script>
 
 </body>

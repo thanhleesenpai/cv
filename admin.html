@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Sửa CV</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --border:#2a2f3a; --text:#e8eaf0;
+    --text-dim:#a3a9b8; --accent:#5b8cff; --danger:#e5566b; --ok:#3ecf8e;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; min-height:100vh;
+    background:var(--bg); color:var(--text);
+    font-family:Arial, Helvetica, "Segoe UI", sans-serif;
+    display:flex; flex-direction:column; align-items:center;
+    padding:24px 16px 60px;
+  }
+  h1{ font-size:20px; margin:0 0 4px; }
+  .hint{ color:var(--text-dim); font-size:13px; margin-bottom:20px; }
+  .card{
+    width:100%; max-width:900px;
+    background:var(--panel); border:1px solid var(--border);
+    border-radius:12px; padding:20px;
+  }
+  label{ display:block; font-size:13px; color:var(--text-dim); margin-bottom:6px; }
+  input[type="password"]{
+    width:100%; padding:10px 12px; border-radius:8px;
+    border:1px solid var(--border); background:#0f1115; color:var(--text);
+    font-size:14px; margin-bottom:16px;
+  }
+  textarea{
+    width:100%; height:60vh; min-height:400px;
+    padding:14px; border-radius:8px;
+    border:1px solid var(--border); background:#0b0d12; color:var(--text);
+    font-family:"Cascadia Code", Consolas, monospace; font-size:13px;
+    line-height:1.5; resize:vertical; tab-size:2;
+  }
+  .row{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; align-items:center; }
+  button{
+    border:none; border-radius:8px; padding:10px 18px;
+    font-size:14px; font-weight:600; cursor:pointer;
+  }
+  #save-btn{ background:var(--accent); color:#fff; }
+  #reload-btn{ background:transparent; color:var(--text); border:1px solid var(--border); }
+  #save-btn:disabled{ opacity:.6; cursor:not-allowed; }
+  .msg{ font-size:13px; margin-left:auto; }
+  .msg.ok{ color:var(--ok); }
+  .msg.err{ color:var(--danger); }
+</style>
+</head>
+<body>
+
+<h1>Sửa nội dung CV</h1>
+<div class="hint">Sửa trực tiếp JSON bên dưới rồi bấm Lưu — thay đổi sẽ được commit vào GitHub và trang CV tự deploy lại sau ít phút.</div>
+
+<div class="card">
+  <label for="password">Mật khẩu</label>
+  <input type="password" id="password" autocomplete="current-password" placeholder="Nhập mật khẩu quản trị">
+
+  <label for="content">Nội dung (data.json)</label>
+  <textarea id="content" spellcheck="false"></textarea>
+
+  <div class="row">
+    <button id="save-btn">Lưu thay đổi</button>
+    <button id="reload-btn" type="button">Tải lại từ server</button>
+    <span class="msg" id="msg"></span>
+  </div>
+</div>
+
+<script>
+  const contentEl = document.getElementById('content');
+  const passwordEl = document.getElementById('password');
+  const msgEl = document.getElementById('msg');
+  const saveBtn = document.getElementById('save-btn');
+  const reloadBtn = document.getElementById('reload-btn');
+
+  function setMsg(text, kind){
+    msgEl.textContent = text;
+    msgEl.className = 'msg' + (kind ? ' ' + kind : '');
+  }
+
+  function loadData(){
+    setMsg('Đang tải...', '');
+    return fetch('data.json?v=' + Date.now())
+      .then(r => r.json())
+      .then(data => { contentEl.value = JSON.stringify(data, null, 2); setMsg('Đã tải nội dung mới nhất.', 'ok'); })
+      .catch(err => setMsg('Không tải được data.json: ' + err, 'err'));
+  }
+
+  reloadBtn.addEventListener('click', () => {
+    if (confirm('Bỏ thay đổi hiện tại và tải lại từ server?')) loadData();
+  });
+
+  saveBtn.addEventListener('click', () => {
+    let parsed;
+    try {
+      parsed = JSON.parse(contentEl.value);
+    } catch (e) {
+      setMsg('JSON không hợp lệ: ' + e.message, 'err');
+      return;
+    }
+    if (!passwordEl.value){
+      setMsg('Nhập mật khẩu trước đã.', 'err');
+      return;
+    }
+    saveBtn.disabled = true;
+    setMsg('Đang lưu...', '');
+    fetch('/api/save-cv', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: passwordEl.value, content: parsed })
+    })
+      .then(async r => {
+        const body = await r.json().catch(() => ({}));
+        if (!r.ok) throw new Error(body.error || ('HTTP ' + r.status));
+        setMsg('Đã lưu và commit lên GitHub. Trang CV sẽ cập nhật sau khoảng 1 phút.', 'ok');
+      })
+      .catch(err => setMsg('Lỗi: ' + err.message, 'err'))
+      .finally(() => { saveBtn.disabled = false; });
+  });
+
+  loadData();
+</script>
+
+</body>
+</html>
