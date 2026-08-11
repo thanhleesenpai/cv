@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "06/08/2026"
+    "updated": "11/08/2026"
   },
   "person": {
     "name": "Lê Minh Thành",
@@ -35,7 +35,7 @@
     ]
   },
   "about": {
-    "vi": "Cử nhân CNTT vừa hoàn thành chương trình Việt Nhật (ITe6) tại ĐH Bách Khoa Hà Nội, có kinh nghiệm xây dựng ứng dụng fullstack qua các dự án cá nhân với kiến trúc thực tế (microservices, xử lý bất đồng bộ, tích hợp AI) và 2 kỳ thực tập backend. Mong muốn ứng tuyển vị trí Thực tập sinh (Intern)/Fresher Backend hoặc Full-stack Developer để tiếp tục phát triển chuyên môn và đóng góp vào sản phẩm thực tế.",
+    "vi": "Cử nhân CNTT vừa hoàn thành chương trình Việt Nhật (ITe6) tại ĐH Bách Khoa Hà Nội, có kinh nghiệm xây dựng ứng dụng fullstack qua các dự án cá nhân với kiến trúc thực tế (microservices, xử lý bất đồng bộ, tích hợp AI) và 2 kỳ thực tập backend. Mong muốn ứng tuyển vị trí Intern/Fresher Backend hoặc Full-stack Developer để tiếp tục phát triển chuyên môn và đóng góp vào sản phẩm thực tế.",
     "en": "Bachelor of IT who has just completed the Vietnam–Japan Program (ITe6) at Hanoi University of Science and Technology, with hands-on full-stack experience building personal projects with real-world architecture (microservices, asynchronous processing, AI integration) and two backend internships. Seeking an Internship/Fresher Backend or Full-stack Developer role to further develop my skills and contribute to real-world products."
   },
   "education": [
@@ -117,8 +117,8 @@
       },
       "github": "https://github.com/thanhleesenpai/rov-management",
       "desc": {
-        "vi": "ROV vận hành tại hiện trường (sông, biển, trên tàu) không có kết nối mạng ổn định, và người vận hành cần tập trung điều khiển thiết bị thay vì thao tác thêm hệ thống khác — dữ liệu vì vậy chỉ được ghi offline tại chỗ, cần xem lại và phân tích sau khi nhiệm vụ kết thúc. Dự án xây dựng phân hệ quản lý thông tin nhiệm vụ trên nền web giúp tra cứu, phân tích dữ liệu thuận tiện hơn, đồng thời thử nghiệm triển khai AI phân tích hình ảnh/video.",
-        "en": "ROVs operate in the field (rivers, oceans, aboard ships) with no stable network connection, and operators need to focus on controlling the vehicle rather than handling other systems — so data is recorded offline on-site for review and analysis after the mission ends. This project builds a web-based mission information system for easier lookup and analysis, with an experimental AI pipeline for image/video analysis."
+        "vi": "Xây dựng nền tảng giải quyết bài toán xử lý dữ liệu hiện trường (nơi không có kết nối mạng), cho phép người vận hành tải lên toàn bộ dữ liệu khi về bờ. Hệ thống tích hợp pipeline AI bất đồng bộ để tự động hóa việc phân tích video/hình ảnh sau nhiệm vụ.",
+        "en": "Built to handle disconnected field operations, this platform allows operators to upload raw data once back on shore. It features a comprehensive dashboard and an automated, asynchronous AI pipeline for post-mission video and image analysis."
       },
       "bullets": [
         {
@@ -142,8 +142,8 @@
       },
       "github": "https://github.com/thanhleesenpai/bankservice-java",
       "desc": {
-        "vi": "Backend ngân hàng tách thành 3 microservice Spring Boot độc lập (bank-service, payment-service, notification-service) kèm React frontend: ledger service không giao tiếp trực tiếp với message broker, một giao dịch chuyển tiền là cả một state machine chứ không phải một lệnh atomic đơn lẻ.",
-        "en": "A banking backend split into 3 independent Spring Boot microservices (bank-service, payment-service, notification-service) with a React frontend: the ledger service never talks directly to the message broker, and a money transfer is an entire state machine rather than a single atomic call."
+        "vi": "Xây dựng hệ thống ngân hàng chia thành 3 microservices độc lập (bank, payment, notification) nhằm mô phỏng kiến trúc thực tế: tách biệt hoàn toàn Core Ledger (xử lý giao dịch) với Message Broker (xử lý thông báo).",
+        "en": "Built a banking system split into 3 independent microservices (bank, payment, notification) to simulate real-world architecture: completely decoupling the Core Ledger (transaction processing) from the Message Broker (notification handling)."
       },
       "bullets": [
         {
