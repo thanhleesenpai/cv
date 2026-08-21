@@ -112,10 +112,19 @@
         "en": "– Graduation Thesis"
       },
       "meta": {
-        "vi": "Dự án cá nhân | Nền tảng quản lý dữ liệu khảo sát cho phương tiện ROV (Remotely Operated Vehicle)\nLive Demo: https://rov-management.thanhminhle.id.vn\n",
-        "en": "Personal project | Web-based mission data management platform for ROVs (Remotely Operated Vehicles)\nLive Demo: https://rov-management.thanhminhle.id.vn\n"
+        "vi": "Dự án cá nhân | Nền tảng quản lý dữ liệu khảo sát cho phương tiện ROV (Remotely Operated Vehicle)",
+        "en": "Personal project | Web-based mission data management platform for ROVs (Remotely Operated Vehicles)"
       },
-      "github": "https://github.com/thanhleesenpai/rov-management",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/thanhleesenpai/rov-management"
+        },
+        {
+          "label": "Live Demo",
+          "url": "https://rov-management.thanhminhle.id.vn"
+        }
+      ],
       "desc": {
         "vi": "Xây dựng nền tảng giải quyết bài toán xử lý dữ liệu hiện trường (nơi không có kết nối mạng), cho phép người vận hành tải lên toàn bộ dữ liệu khi về bờ. Hệ thống tích hợp pipeline AI bất đồng bộ để tự động hóa việc phân tích video/hình ảnh sau nhiệm vụ.",
         "en": "Built to handle disconnected field operations, this platform allows operators to upload raw data once back on shore. It features a comprehensive dashboard and an automated, asynchronous AI pipeline for post-mission video and image analysis."
@@ -140,7 +149,12 @@
         "vi": "Dự án cá nhân",
         "en": "Personal project"
       },
-      "github": "https://github.com/thanhleesenpai/bankservice-java",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/thanhleesenpai/bankservice-java"
+        }
+      ],
       "desc": {
         "vi": "Xây dựng hệ thống ngân hàng chia thành 3 microservices độc lập (bank, payment, notification) nhằm mô phỏng kiến trúc thực tế: tách biệt hoàn toàn Core Ledger (xử lý giao dịch) với Message Broker (xử lý thông báo).",
         "en": "Built a banking system split into 3 independent microservices (bank, payment, notification) to simulate real-world architecture: completely decoupling the Core Ledger (transaction processing) from the Message Broker (notification handling)."

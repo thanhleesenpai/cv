@@ -142,10 +142,21 @@
           titleDiv.append(' ');
           titleDiv.appendChild(field('span', null, `${base}.titleSuffix`, pr.titleSuffix));
         }
-        const ghLine = el('div', { class:'meta-line' });
-        ghLine.append('GitHub: ');
-        if (editable) ghLine.appendChild(field('span', null, `${base}.github`, pr.github));
-        else ghLine.appendChild(el('a', { text: pr.github.replace(/^https?:\/\//, ''), href: pr.github }));
+        const links = Array.isArray(pr.links)
+          ? pr.links
+          : (pr.github ? [{ label: 'GitHub', url: pr.github }] : []);
+        const linkLines = links.map((link, j) => {
+          const linkLine = el('div', { class:'meta-line' });
+          if (editable){
+            linkLine.appendChild(field('span', null, `${base}.links.${j}.label`, link.label));
+            linkLine.append(' ');
+            linkLine.appendChild(field('span', null, `${base}.links.${j}.url`, link.url));
+          } else {
+            linkLine.appendChild(el('span', { text: link.label + ': ' }));
+            linkLine.appendChild(el('a', { text: link.url.replace(/^https?:\/\//, ''), href: link.url }));
+          }
+          return linkLine;
+        });
 
         const ul = el('ul');
         pr.bullets.forEach((b, j) => ul.appendChild(el('li', {}, [field('span', null, `${base}.bullets.${j}`, b)])));
@@ -158,7 +169,7 @@
           el('div', { class:'content-col' }, [
             titleDiv,
             field('div', 'meta-line', `${base}.meta`, pr.meta),
-            ghLine,
+            ...linkLines,
             el('p', { class:'desc' }, [field('span', null, `${base}.desc`, pr.desc)]),
             ul,
             techLine
