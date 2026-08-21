@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "11/08/2026"
+    "updated": "21/08/2026"
   },
   "person": {
     "name": "Lê Minh Thành",
@@ -112,8 +112,8 @@
         "en": "– Graduation Thesis"
       },
       "meta": {
-        "vi": "Dự án cá nhân | Nền tảng quản lý dữ liệu khảo sát cho phương tiện ROV (Remotely Operated Vehicle)",
-        "en": "Personal project | Web-based mission data management platform for ROVs (Remotely Operated Vehicles)"
+        "vi": "Dự án cá nhân | Nền tảng quản lý dữ liệu khảo sát cho phương tiện ROV (Remotely Operated Vehicle)\nLive Demo: https://rov-management.thanhminhle.id.vn\n",
+        "en": "Personal project | Web-based mission data management platform for ROVs (Remotely Operated Vehicles)\nLive Demo: https://rov-management.thanhminhle.id.vn\n"
       },
       "github": "https://github.com/thanhleesenpai/rov-management",
       "desc": {
@@ -126,11 +126,11 @@
           "en": "Key features: built a custom sonar viewer (canvas) and DVL trajectory viewer (SVG pan/zoom) from scratch; real-time video–telemetry sync (\"cockpit\") with anomaly detection (Z-score); multi-format ingestion pipeline that auto-detects CSV/manifest formats; asynchronous AI processing (Bull, SSE) for AI summaries and YOLOv8 object detection; JWT + Google OAuth2 authentication, RBAC, audit log."
         },
         {
-          "vi": "Vai trò: Tự thiết kế toàn bộ kiến trúc, đảm nhận frontend, backend và microservice AI; viết functional test và load test (Artillery).",
+          "vi": "Vai trò: Tự thiết kế toàn bộ kiến trúc, đảm nhận frontend, backend và microservice AI; tự đóng gói Docker Compose, cấu hình Nginx Reverse Proxy & cấp SSL/HTTPS triển khai dự án lên VPS thực tế; viết functional test và load test (Artillery).",
           "en": "Role: Solely designed the entire architecture and built the frontend, backend, and AI microservice; wrote functional and load tests (Artillery)."
         }
       ],
-      "tech": "Node.js + Express, MongoDB Atlas, Redis, AWS S3, Docker Compose, Google Gemini 2.5 Flash, YOLOv8 (FastAPI, Python), React 18 + Vite, Tailwind CSS."
+      "tech": "Node.js + Express, MongoDB Atlas, Redis, AWS S3, Docker Compose, Nginx (Reverse Proxy + HTTPS/SSL), Google Gemini 2.5 Flash, YOLOv8 (FastAPI, Python), React 18 + Vite, Tailwind CSS."
     },
     {
       "date": "2025 –",
@@ -184,7 +184,7 @@
         "vi": "Công cụ & Khác:",
         "en": "Tools & Others:"
       },
-      "value": "Docker/Docker Compose, Git, Linux/VPS, Apache, JUnit, Mockito, Postman, AWS S3."
+      "value": "Docker/Docker Compose, Nginx (Reverse Proxy & SSL/Certbot), Git, Linux/VPS, Apache, JUnit, Mockito, Postman, AWS S3."
     },
     {
       "label": {
